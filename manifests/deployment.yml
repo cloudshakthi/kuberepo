@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: cloudshakthikuberepo 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cloudshakthikuberepo
+  template:
+    metadata:
+      labels:
+        app: cloudshakthikuberepo 
+    spec:
+      containers:
+        - name: cloudshakthikuberepo 
+          image: acr120424.azurecr.io/cloudshakthikuberepo
+          ports:
+          - containerPort: 8080
